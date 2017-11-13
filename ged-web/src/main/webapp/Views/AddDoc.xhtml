@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+
+<ui:include src="/Template/Template.xhtml" />
+ <body class="fixed-left">
+    <div id="wrapper" class="forced enlarged">
+   
+ 
+        <ui:include src="/template/header.xhtml" />
+        <ui:include src="/template/leftMenu.xhtml" />
+        
+        <!-- YOUR CODE HERE -->
+        
+        
+        
+        
+        
+        
+     <div class="content-page">
+		<!-- Start content -->
+		<div class="content">
+			<div class="container">
+
+				<!-- Page-Title -->
+				<div class="row">
+					<div class="col-sm-12">
+
+
+						<h4 class="page-title">Dashboard</h4>
+					</div>
+				<div class="row">
+
+<div class="col-md-6">
+<h:form id="master">
+
+
+
+ <h:panelGrid columns="3">
+
+	
+	<h:outputText value="type" />
+	<h:inputText  styleClass="form-controle" value="#{documentBean.stDocument.type}"/>
+	
+	<h:outputText value="titre1" />	
+	<h:inputText styleClass="form-controle" value="#{documentBean.stDocument.titre1}"/>
+	
+	
+	<h:commandButton id="submit" action="#{documentBean.save()}" value="Save" />
+
+	
+</h:panelGrid>
+
+
+</h:form>
+	
+
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- content -->
+</div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <!-- END YOUR CODE -->   
+        
+         
+        </div>
+         </body>
+	
+
+
+	
+
+		<footer class="footer">
+			2017 © Flacto. Design by <a href="ged" target="_blank"
+				class="text-muted">ged</a>
+		</footer>
+
+	
+
+
+
+
+</ui:composition>
+</html>

@@ -5,7 +5,16 @@
         <dependent-module archiveName="ged-web.war" deploy-path="/" handle="module:/resource/ged-web/ged-web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ged-ejb.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/edu/esprit/ged/ged-ejb/0.0.1-SNAPSHOT/ged-ejb-0.0.1-SNAPSHOT.jar">
+        <dependent-module archiveName="ged-ejb.jar" deploy-path="/" handle="module:/resource/ged-ejb/ged-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="primefaces.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/primefaces/primefaces/5.3/primefaces-5.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jfreechart.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jcommon.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>
