@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+
+	<ui:include src="/Template/Template.xhtml" />
+	<body class="fixed-left">
+		<div id="wrapper" class="forced enlarged">
+
+
+			<ui:include src="header.xhtml" />
+			<ui:include src="leftMenu.xhtml" />
+
+			<!-- YOUR CODE HERE -->
+
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+
+						<!-- Page-Title -->
+						<div class="row">
+							<div class="col-sm-12">
+								<ul
+									class="nav nav-pills nav-pills-custom display-xs-none pull-right">
+									<li role="presentation"><a href="#">Today</a></li>
+									<li role="presentation" class="active"><a href="#">Yesterday</a></li>
+									<li role="presentation"><a href="#">Last Week</a></li>
+								</ul>
+
+								<h4 class="page-title">Dashboard</h4>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<div class="dropdown pull-right">
+										<a href="#" class="dropdown-toggle card-drop"
+											data-toggle="dropdown" aria-expanded="false"> <i
+											class="zmdi zmdi-more-vert"></i>
+										</a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div>
+
+									<h4 class="header-title m-t-0">
+										<h:outputText rendered="#{emailBean.receivedEmail == null}" value="Send Email To:" />
+										<h:outputText rendered="#{emailBean.receivedEmail != null}" value="Reply to #{emailBean.receivedEmail.sender.emailAndName}" />
+										<h:outputText rendered="#{emailBean.receivedEmail != null}" style="float:right; margin-right:20px;" value="Received on #{emailBean.receivedEmail.send_date}" />
+									</h4>
+
+									<div class="text-center m-t-10">
+										<div id="morris-donut-example" style="height: 440px;">
+
+											<h:form>
+												<h:panelGroup id="depAndUsrMenus" rendered="#{emailBean.receivedEmail == null}">
+													<h5 style="text-align: left;">
+														<h:selectOneMenu id="depMenu" value="#{emailBean.selectedDepartment}" required="true">
+															<f:selectItem itemValue="NONE" itemLabel="Select Department" />
+															<f:selectItems value="#{emailBean.departments}" />														
+															<f:ajax event="change" execute="depMenu" render="receiverMenu" />
+														</h:selectOneMenu>
+													</h5>
+
+													<h5 style="text-align: left; height: 21px;">
+														<h:panelGroup id="receiverMenu" style="width:300px">
+															<h:outputText style="width:300px; height:25px;" value="Please choose a department first" rendered="#{emailBean.selectedDepartment == 'NONE'}" />
+															<h:outputText style="width:300px; height:25px;" value="No user in this department" rendered="#{emailBean.selectedDepartment != 'NONE' and empty emailBean.receivers}" />
+															<h:selectOneMenu value="#{emailBean.selectedReceiverId}" rendered="#{emailBean.selectedDepartment != 'NONE' and not empty emailBean.receivers}" required="true">
+																<f:selectItem itemValue="#{null}" itemLabel="Select User" />
+																<f:selectItems value="#{emailBean.receivers}" />
+															</h:selectOneMenu>
+														</h:panelGroup>
+													</h5>
+												</h:panelGroup>
+
+												<h5 style="text-align: left; height: 21px;">
+													<h:outputLabel for="urgentCheckBox" value="Urgent" style="margin-right: 20px" />
+													<h:selectBooleanCheckbox id="urgentCheckBox" value="#{emailBean.priorityHigh}" />
+												</h5>
+
+												<h:panelGrid columns="1"
+													style="margin-bottom:10px;margin-left:650px"
+													cellpadding="5">
+
+													<p:inputTextarea value="#{emailBean.email.subject}"
+														rows="1" cols="50" counter="display" maxlength="50"
+														placeholder="subject" required="true" />
+
+													<p:inputTextarea value="#{emailBean.email.message}"
+														rows="10" placeholder="message" cols="50" required="true" />
+
+												</h:panelGrid>
+
+												<h:outputText id="display" />
+
+												<p:growl id="growl" life="2000" />
+
+												<p:commandButton value="Send"
+														style="background-color:#228B22; color:white; margin-left:310px"
+														action="#{emailBean.doSendEmail}"
+														styleClass="ui-priority-primary" />
+
+											</h:form>
+
+
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+					<!-- container -->
+
+				</div>
+				<!-- content -->
+
+			</div>
+
+
+
+
+			<!-- END YOUR CODE -->
+
+
+		</div>
+	</body>
+
+
+
+
+
+	<footer class="footer">
+		2017 © Flacto. Design by <a href="ged" target="_blank"
+			class="text-muted">ged</a>
+	</footer>
+
+
+
+
+
+
+</ui:composition>
+</html>

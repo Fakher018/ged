@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+
+	<ui:include src="/Template/Template.xhtml" />
+	<body class="fixed-left">
+		<div id="wrapper" class="forced enlarged">
+
+
+			<ui:include src="header.xhtml" />
+			<ui:include src="leftMenu.xhtml" />
+
+			<!-- YOUR CODE HERE -->
+
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+
+						<!-- Page-Title -->
+						<div class="row">
+							<div class="col-sm-12">
+								<ul
+									class="nav nav-pills nav-pills-custom display-xs-none pull-right">
+									<li role="presentation"><a href="#">Today</a></li>
+									<li role="presentation" class="active"><a href="#">Yesterday</a></li>
+									<li role="presentation"><a href="#">Last Week</a></li>
+								</ul>
+
+								<h4 class="page-title">Dashboard</h4>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<div class="dropdown pull-right">
+										<a href="#" class="dropdown-toggle card-drop"
+											data-toggle="dropdown" aria-expanded="false"> <i
+											class="zmdi zmdi-more-vert"></i>
+										</a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div>
+
+									<h4 class="header-title m-t-0">Your Message has been successfuly Sent</h4>
+
+									<br />
+									<br />
+									<h4><a href="Inbox.jsf">Go to Inbox</a></h4>
+
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+					<!-- container -->
+
+				</div>
+				<!-- content -->
+
+				<footer class="footer">
+					2017 © Flacto. Design by <a href="http://coderthemes.com/"
+						target="_blank" class="text-muted">Coderthemes</a>
+				</footer>
+
+			</div>
+
+
+
+
+			<!-- END YOUR CODE -->
+
+
+		</div>
+	</body>
+
+
+
+	<footer class="footer">
+		2017 © Flacto. Design by <a href="ged" target="_blank"
+			class="text-muted">ged</a>
+	</footer>
+
+
+</ui:composition>
+</html>
