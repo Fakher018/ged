@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+
+	<ui:include src="/template/Template.xhtml" />
+	<body class="fixed-left">
+		<div id="wrapper" class="forced enlarged">
+
+
+			<ui:include src="/template/header.xhtml" />
+			<ui:include src="/template/leftMenu.xhtml" />
+
+			<!-- YOUR CODE HERE -->
+
+
+
+
+
+
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+
+						<!-- Page-Title -->
+						<div class="row">
+							<div class="col-sm-12">
+
+
+								<h4 class="page-title">Manage User</h4>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<div class="dropdown pull-right">
+										<a href="#" class="dropdown-toggle card-drop"
+											data-toggle="dropdown" aria-expanded="false"> <i
+											class="zmdi zmdi-more-vert"></i>
+										</a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div>
+
+									<div class="table-responsive">
+
+									<h:form>
+										
+											<div>
+											<h:inputText value="#{listUserBean.searchName}" />
+											<h:commandButton value="Search" action="#{listUserBean.search()}" />
+										</div>
+										<br/>
+											<h:commandButton value="Add" action="#{userBean.goToAdd()}" />
+
+										</h:form>
+										<table class="table">
+											<thead>
+												<tr>
+													<td>Cin</td>
+													<td>Login</td>
+
+												</tr>
+											</thead>
+
+											<tbody>
+												<h:form>
+													<ui:repeat value="#{listUserBean.init()}" var="row"
+														varStatus="status">
+														<tr>
+															<td>#{row.cin}</td>
+															<td>#{row.login}</td>
+															<td><h:commandButton value="Edit"
+																	action="#{userBean.goToEditUser(row)}" /> <h:commandButton
+																	value="Delete" action="#{userBean.deleteUser(row)}" />
+																<h:commandButton value="Contact"
+																	action="#{userBean.goToMail(row)}" /></td>
+														</tr>
+													</ui:repeat>
+												</h:form>
+											</tbody>
+
+										</table>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+					<!-- container -->
+
+				</div>
+				<!-- content -->
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+			<!-- END YOUR CODE -->
+
+
+		</div>
+	</body>
+
+
+
+
+
+	<footer class="footer">
+		2017 © Flacto. Design by <a href="ged" target="_blank"
+			class="text-muted">ged</a>
+	</footer>
+
+
+
+
+
+
+</ui:composition>
+</html>
