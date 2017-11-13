@@ -1,5 +1,0 @@
-Domain\Reclamation.class
-Service\ReclamationServices.class
-Service\ReclamationServicesLocal.class
-Domain\User.class
-Service\ReclamationServicesRemote.class

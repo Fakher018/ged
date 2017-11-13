@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+
+
+	<!-- dependecies -->
+	<h:head>
+		<f:facet name="first">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+			<title>GED</title>
+		</f:facet>
+
+		<f:facet name="middle">
+
+			<link href="../../assets/css/bootstrap.min.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/menu.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/core.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/components.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/icons.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/pages.css" rel="stylesheet"
+				type="text/css" />
+			<link href="../../assets/css/responsive.css" rel="stylesheet"
+				type="text/css" />
+
+
+
+
+		</f:facet>
+
+		<f:facet name="last">
+
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/detect.js"></script>
+			<script src="../../assets/js/fastclick.js"></script>
+			<script src="../../assets/js/jquery.slimscroll.js"></script>
+			<script src="..././assets/js/jquery.blockUI.js"></script>
+			<script src="../../assets/js/waves.js"></script>
+			<script src="../../assets/js/wow.min.js"></script>
+			<script src="../../assets/js/jquery.nicescroll.js"></script>
+			<script src="../../assets/js/jquery.scrollTo.min.js"></script>
+
+
+			<!-- Counter Up  -->
+			<script src="../../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+			<script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+			<!-- Dashboard init -->
+			<script src="../../assets/pages/jquery.dashboard.js"></script>
+
+
+			<!-- App js -->
+			<script src="../../assets/js/jquery.core.js"></script>
+			<script src="../../assets/js/jquery.app.js"></script>
+
+		</f:facet>
+
+	</h:head>
+	<!-- end dependecies -->
+ <body class="fixed-left">
+    <div id="wrapper" class="forced enlarged">
+   
+ 
+        <ui:include src="/Template/header.xhtml" />
+        <ui:include src="/Template/leftMenu.xhtml" />
+        
+        <!-- YOUR CODE HERE -->
+        
+        
+        
+        
+        
+        
+     <div class="content-page">
+		<!-- Start content -->
+		<div class="content">
+			<div class="container">
+
+				<!-- Page-Title -->
+				<div class="row">
+					<div class="col-sm-12">
+
+
+						<h4 class="page-title">List of archives</h4>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card-box">
+							<div class="dropdown pull-right">
+								<a href="#" class="dropdown-toggle card-drop"
+									data-toggle="dropdown" aria-expanded="false"> <i
+									class="zmdi zmdi-more-vert"></i>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
+							</div>
+
+							<div class="table-responsive">
+
+								<table class="table">
+								<thead><tr>
+								<td>Id</td>
+								<td>Folder</td>
+								<td>Document</td>
+								<td>Version</td>
+									<td>Date Archive</td>
+									<td>Action</td>
+								</tr></thead>
+								<tbody>
+								<h:form>
+								<ui:repeat value="#{documentBean.archives}" var="row" varStatus="status">
+										<tr>
+											<td>#{row.id}</td>
+											<td>#{row.folder.name}</td>
+											<td>#{row.documents.titre1}</td>
+											<td>#{row.version}</td>
+											<td>#{row.date_archive}</td>
+											
+											<td>
+											<h:commandButton id="submit" styleClass="btn btn-danger" action="#{documentBean.deletearchive(row.id)}" value="delete" />
+											</td>
+										</tr>
+									</ui:repeat>
+									</h:form>
+									</tbody>
+									
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- content -->
+</div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <!-- END YOUR CODE -->   
+        
+         
+        </div>
+         </body>
+	
+
+
+	
+
+		<footer class="footer">
+			2017 © Flacto. Design by <a href="ged" target="_blank"
+				class="text-muted">ged</a>
+		</footer>
+
+	
+
+
+
+
+</ui:composition>
+</html>

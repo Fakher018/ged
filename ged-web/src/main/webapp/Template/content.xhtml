@@ -6,109 +6,115 @@
 <ui:composition>
 
 
-	<ui:include src="/Template/Template.xhtml" />
-	<body class="fixed-left">
-		<div id="wrapper" class="forced enlarged">
+<ui:include src="/Template/Template.xhtml" />
+ <body class="fixed-left">
+    <div id="wrapper" class="forced enlarged">
+   
+ 
+        <ui:include src="header.xhtml" />
+        <ui:include src="leftMenu.xhtml" />
+        
+        <!-- YOUR CODE HERE -->
+        
+        
+        
+        
+        
+        
+     <div class="content-page">
+		<!-- Start content -->
+		<div class="content">
+			<div class="container">
+
+				<!-- Page-Title -->
+				<div class="row">
+					<div class="col-sm-12">
 
 
-			<ui:include src="/Template/header.xhtml" />
-			<ui:include src="/Template/leftMenu.xhtml" />
-
-			<!-- YOUR CODE HERE -->
-
-
-
-
-
-
-			<div class="content-page">
-				<!-- Start content -->
-				<div class="content">
-					<div class="container">
-
-						<!-- Page-Title -->
-						<div class="row">
-							<div class="col-sm-12">
-
-
-								<h4 class="page-title">Dashboard</h4>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="card-box">
-									<div class="dropdown pull-right">
-										<a href="#" class="dropdown-toggle card-drop"
-											data-toggle="dropdown" aria-expanded="false"> <i
-											class="zmdi zmdi-more-vert"></i>
-										</a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-
-
-									<h:form id="login_form">
-										<h:panelGrid columns="2">
-											<h:outputLabel value="Subject of Reclamation" />
-											<h:inputText value="#{reclamBean.rec.subject}" />
-											<h:outputLabel value="Message" />
-											<h:inputTextarea value="#{reclamBean.rec.message}" />
-											<h:commandButton value="Envoyer"
-												action="#{reclamBean.doSave()}" />
-
-
-
-
-										</h:panelGrid>
-									</h:form>
-
-
-
-								</div>
-							</div>
-						</div>
-
-
-
+						<h4 class="page-title">Dashboard</h4>
 					</div>
-					<!-- container -->
-
 				</div>
-				<!-- content -->
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card-box">
+							<div class="dropdown pull-right">
+								<a href="#" class="dropdown-toggle card-drop"
+									data-toggle="dropdown" aria-expanded="false"> <i
+									class="zmdi zmdi-more-vert"></i>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
+							</div>
+
+							<div class="table-responsive">
+
+								<table class="table">
+								<thead><tr>
+								<td>Id</td>
+								<td>Folder</td>
+								<td>Document</td>
+								<td>Version</td>
+									<td>Date Archive</td>
+								</tr></thead>
+								<tbody>
+								<ui:repeat value="#{documentBean.archives}" var="row" varStatus="status">
+										<tr>
+											<td>#{row.id}</td>
+											<td>#{row.folder.name}</td>
+											<td>#{row.documents.titre1}</td>
+											<td>#{row.version}</td>
+											<td>#{row.date_archive}</td>
+										</tr>
+									</ui:repeat>
+									</tbody>
+									
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-			<!-- END YOUR CODE -->
-
+			<!-- container -->
 
 		</div>
-	</body>
+		<!-- content -->
+</div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <!-- END YOUR CODE -->   
+        
+         
+        </div>
+         </body>
+	
 
 
+	
 
+		<footer class="footer">
+			2017 © Flacto. Design by <a href="ged" target="_blank"
+				class="text-muted">ged</a>
+		</footer>
 
-
-	<footer class="footer">
-		2017 © Flacto. Design by <a href="ged" target="_blank"
-			class="text-muted">ged</a>
-	</footer>
-
-
+	
 
 
 
