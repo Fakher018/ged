@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ged-ear">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="ged-web.war" deploy-path="/" handle="module:/resource/ged-web/ged-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ged-ejb.jar" deploy-path="/" handle="module:/resource/ged-ejb/ged-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="primefaces.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/primefaces/primefaces/5.3/primefaces-5.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jfreechart.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jcommon.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
